@@ -44,5 +44,14 @@ class testRectangulo {
 		int perimetroObtenido = r2.perimetro();
 		assertEquals(perimetroEsperado,perimetroObtenido);
 	}
+	
+	@Test
+	void testRectanguloExcepcion1() {
+		Exception excepcion = assertThrows(IllegalArgumentException.class, () -> new Rectangulo(0,0));
+		//Exception excepcion2 = assertThrows(IllegalArgumentException.class, () -> r1.area());
+		String mensajeEsperado = "La base y la altura deben ser superiores a 0";
+		String mensajeObtenido = excepcion.getMessage();
+		assertEquals(mensajeEsperado, mensajeObtenido);
+	}
 
 }
