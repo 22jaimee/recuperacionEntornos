@@ -10,6 +10,9 @@ public class Rectangulo {
 	 * @param altura	la base del rectangulo
 	 */
 	public Rectangulo(int base, int altura) {
+		if(base<=0 || altura<=0) {
+			throw new IllegalArgumentException("La base y la altura deben ser superiores a 0");
+		}
 		this.base=base;
 		this.altura=altura;
 	}
